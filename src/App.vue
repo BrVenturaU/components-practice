@@ -1,16 +1,19 @@
 <template>
   <div id="app" class="container">
-    <Encabezado titulo="Conversor de Unidades"/>
+    <Header titulo="Conversor de Unidades"/>
+    <BaseForm />
   </div>
 </template>
 
 <script>
-import Encabezado from './components/Encabezado.vue'
+import Header from './components/Header.vue'
+import BaseForm from './components/BaseForm.vue'
 
 export default {
   name: 'App',
   components: {
-    Encabezado
+    Header,
+    BaseForm
   }
 }
 </script>
