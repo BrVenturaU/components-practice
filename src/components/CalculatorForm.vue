@@ -74,6 +74,10 @@ function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult
     let value = isNaN(parseInt(valueFrom)) ? "" : parseInt(valueFrom);
     if(selectedMeasureUnitFrom != 0 && selectedMeasureUnitResult != 0 && value != ""){
         
+        // Ejemplos
+        console.log(calculate(1000, "m", "cm"));
+        // Solo se calculara isMoney=true cuando el categoryId sea igual a 2
+        console.log(calculate(1000, "USD", "EUR", true))
         /*
             Logica de calculos acá si cambia la unidad de destino.
             Se puede verificar si ese id es el de una unidad de medida especifica, al ser valores estaticos
@@ -87,6 +91,33 @@ function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult
         let valueResult = 10 + value;
         return valueResult;
     }
+}
+
+// Configuraciones para el modulo money (fx) los valores se utilizan 
+// considerando el dolar como moneda base por lo que deben tenerse sus valores de conversión.
+const fxConfigs = { base: "USD", rates:{
+        "EUR" : 0.745101, // eg. 1 USD === 0.745101 EUR
+        "GBP" : 0.647710, // etc...
+        "HKD" : 7.781919,
+        "USD" : 1,        // always include the base rate (1:1)
+        /* etc */
+    }
+};
+
+// Metodo que permite calcular los resultados a partir de las unidades de medidas
+function calculate(value, measureUnitFromSymbol, measureUnitResultSymbol, isMoney=false){
+    // Si la unidad de medida es monedas lo calcula con la libreria money
+    let result = 0;
+    if(isMoney){
+        fx.base = fxConfigs.base;
+        fx.rates = fxConfigs.rates;
+        result = fx(value).from(measureUnitFromSymbol).to(measureUnitResultSymbol);
+    }else{
+        // Sino lo calcula con convert-units
+        result = convert(value).from(measureUnitFromSymbol).to(measureUnitResultSymbol);
+    }
+     return result;
+    
 }
 </script>
 
