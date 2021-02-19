@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import convert from 'convert-units'
+import fx from 'money'
 export default {
     name:'CalculatorForm',
     props:{
@@ -71,6 +73,7 @@ function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult
     // Obtenemos el valor de la unidad de medida.
     let value = isNaN(parseInt(valueFrom)) ? "" : parseInt(valueFrom);
     if(selectedMeasureUnitFrom != 0 && selectedMeasureUnitResult != 0 && value != ""){
+        
         /*
             Logica de calculos acá si cambia la unidad de destino.
             Se puede verificar si ese id es el de una unidad de medida especifica, al ser valores estaticos
