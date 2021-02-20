@@ -16,12 +16,6 @@
                         <!-- Componente con los inputs para cálculos al cual le enviamos las categorias seleccionadas -->
                         <CalculatorForm :measureUnits="selectedMeasureUnits" />
                         
-                        <b-row>
-                            <b-col cols="12" class="text-left">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                            </b-col>
-                        </b-row>
-                        
                     </b-form>
                 </div>
             </div>
@@ -44,21 +38,25 @@ export default {
 
             // Unidades de medida (cada categoryId corresponde a un id de las categorias anteriores)
             measureUnits:[
-                {id:1, categoryId:1, name:"N1"},
+               /* {id:1, categoryId:1, name:"N1"},
                 {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:2, name:"N4"},
-                {id:5, categoryId:2, name:"N5"},
-                {id:6, categoryId:2, name:"N6"},
-                {id:7, categoryId:3, name:"N7"},
-                {id:8, categoryId:3, name:"N8"},
-                {id:9, categoryId:3, name:"N9"},
-                {id:10, categoryId:4, name:"N10"},
+                {id:3, categoryId:1, name:"N3"},*/
+                {id:6, categoryId:2, name:"USD"}, // dolar estadounidense
+                {id:7, categoryId:2, name:"EURO"}, // euro - España
+                {id:8, categoryId:2, name:"GBP"}, // libra esterlina
+                {id:9, categoryId:2, name:"HKD"}, // dolar - Hong Kong
+                {id:10, categoryId:2, name:"AED"}, // dirham - Emiratos Arabes
+                {id:11, categoryId:3, name:"Onza", symbol:"oz"},
+                {id:12, categoryId:3, name:"Gramo", symbol:"g"},
+                {id:13, categoryId:3, name:"Miligramo", symbol:"mg"},
+                {id:14, categoryId:3, name:"Libra", symbol:"lb"},
+                {id:15, categoryId:3, name:"Kilogramo", symbol:"kg"},
+                /*{id:10, categoryId:4, name:"N10"},
                 {id:11, categoryId:4, name:"N11"},
                 {id:12, categoryId:4, name:"N12"},
                 {id:13, categoryId:5, name:"N13"},
                 {id:14, categoryId:5, name:"N14"},
-                {id:15, categoryId:5, name:"N15"}
+                {id:15, categoryId:5, name:"N15"}*/
             ],
             // Unidades de medida seleccionadas
             selectedMeasureUnits:[

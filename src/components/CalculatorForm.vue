@@ -37,6 +37,10 @@
 </template>
 
 <script>
+//Realizar los import de las librerias para las conversiones
+//let convert = require('convert-units')
+import convert from 'convert-units'
+
 export default {
     name:'CalculatorForm',
     props:{
@@ -54,23 +58,30 @@ export default {
     methods:{
         onChangeMeasureFrom(e){
             this.selectedMeasureUnitFrom = parseInt(e.target.value);
-            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, this.selectedMeasureUnitResult);
+            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, 
+            this.selectedMeasureUnitResult, this.measureUnits);
         },
         onChangeMeasureResult(e){
             this.selectedMeasureUnitResult = parseInt(e.target.value);
-            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, this.selectedMeasureUnitResult);
+            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, 
+            this.selectedMeasureUnitResult, this.measureUnits);
         },
         onKeyupValueFrom(e){
             this.valueFrom = isNaN(parseInt(e.target.value)) ? "" : parseInt(e.target.value);
-            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, this.selectedMeasureUnitResult);
+            this.valueResult = getResult(this.valueFrom, this.selectedMeasureUnitFrom, 
+            this.selectedMeasureUnitResult, this.measureUnits);
         }
     }
 }
 
-function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult){
+function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult, measureUnits){
     // Obtenemos el valor de la unidad de medida.
     let value = isNaN(parseInt(valueFrom)) ? "" : parseInt(valueFrom);
     if(selectedMeasureUnitFrom != 0 && selectedMeasureUnitResult != 0 && value != ""){
+        
+        let measureUnitFrom = measureUnits.find(mf => mf.id == selectedMeasureUnitFrom)
+        let measureUnitResult = measureUnits.find(mf => mf.id == selectedMeasureUnitResult)        
+
         /*
             Logica de calculos acá si cambia la unidad de destino.
             Se puede verificar si ese id es el de una unidad de medida especifica, al ser valores estaticos
@@ -79,11 +90,11 @@ function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult
             O incluso seria mucho mas eficiente tener un switch case.
 
         */
-
         // Asignamos el resultado
-        let valueResult = 10 + value;
+        let valueResult = convert(value).from(measureUnitFrom.symbol).to(measureUnitResult.symbol)
         return valueResult;
     }
+
 }
 </script>
 
