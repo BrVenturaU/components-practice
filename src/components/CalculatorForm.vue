@@ -37,8 +37,6 @@
 </template>
 
 <script>
-//Realizar los import de las librerias para las conversiones
-//let convert = require('convert-units')
 import convert from 'convert-units'
 
 export default {
@@ -77,25 +75,18 @@ export default {
 function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult, measureUnits){
     // Obtenemos el valor de la unidad de medida.
     let value = isNaN(parseInt(valueFrom)) ? "" : parseInt(valueFrom);
+
     if(selectedMeasureUnitFrom != 0 && selectedMeasureUnitResult != 0 && value != ""){
         
         let measureUnitFrom = measureUnits.find(mf => mf.id == selectedMeasureUnitFrom)
         let measureUnitResult = measureUnits.find(mf => mf.id == selectedMeasureUnitResult)        
 
-        /*
-            Logica de calculos acá si cambia la unidad de destino.
-            Se puede verificar si ese id es el de una unidad de medida especifica, al ser valores estaticos
-            ya se sabe cual sera, entonces si el id es igual a X numero se hace un calculo, sino otro.
-
-            O incluso seria mucho mas eficiente tener un switch case.
-
-        */
         // Asignamos el resultado
-        let valueResult = convert(value).from(measureUnitFrom.symbol).to(measureUnitResult.symbol)
+        let valueResult = convert(value).from(measureUnitFrom.symbol).to(measureUnitResult.symbol) 
         return valueResult;
     }
-
 }
+
 </script>
 
 <style scoped>
