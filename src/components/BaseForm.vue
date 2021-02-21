@@ -67,11 +67,11 @@ export default {
                 {id:15, categoryId:3, name:"N15"},
 
                 //Tiempo
-                {id:16, categoryId:4, name:"N16"},
-                {id:17, categoryId:4, name:"N17"},
-                {id:18, categoryId:4, name:"N18"},
-                {id:19, categoryId:4, name:"N19"},
-                {id:20, categoryId:4, name:"N20"},
+                {id:16, categoryId:4, name:"Milisegundo", symbol:"ms"},
+                {id:17, categoryId:4, name:"Segundo", symbol:"s"},
+                {id:18, categoryId:4, name:"Minutos", symbol:"min"},
+                {id:19, categoryId:4, name:"Hora", symbol:"h"},
+                {id:20, categoryId:4, name:"Día", symbol:"d"},
                 //Almacenamiento
                 {id:21, categoryId:5, name:"N21"},
                 {id:22, categoryId:5, name:"N22"},
