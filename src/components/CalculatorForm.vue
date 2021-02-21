@@ -87,12 +87,17 @@ function getResult(valueFrom, selectedMeasureUnitFrom, selectedMeasureUnitResult
 
     if(selectedMeasureUnitFrom != 0 && selectedMeasureUnitResult != 0 && value != ""){
         
-        let measureUnitFrom = measureUnits.find(mf => mf.id == selectedMeasureUnitFrom)
-        let measureUnitResult = measureUnits.find(mf => mf.id == selectedMeasureUnitResult)        
+        let measureUnitFrom = measureUnits.find(mf => mf.id == selectedMeasureUnitFrom);
+        let measureUnitResult = measureUnits.find(mf => mf.id == selectedMeasureUnitResult);       
 
         // Asignamos el resultado
-        let valueResult = convert(value).from(measureUnitFrom.symbol).to(measureUnitResult.symbol) 
-        return valueResult;
+        try {
+            let valueResult = convert(value).from(measureUnitFrom.symbol).to(measureUnitResult.symbol) 
+            return valueResult;
+        } catch (error) {
+            return '';
+        }
+        
     }
 }
 
