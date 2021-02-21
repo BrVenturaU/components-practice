@@ -42,11 +42,20 @@ import convert from 'convert-units'
 export default {
     name:'CalculatorForm',
     props:{
-        measureUnits: Array
+        measureUnits: Array,
+        isChangingCategory: Boolean
+    },
+    beforeUpdate(){
+        if(this.isChangingCategory){
+            this.valueFrom = 1;
+            this.valueResult = 1;
+            this.$emit('isChangedValues', false);
+        }
+            
     },
     data() {
         return {
-            valueFrom:1,
+            valueFrom: 1,
             valueResult: 1,
             selectedMeasureUnit: 0,
             selectedMeasureUnitFrom: 0,

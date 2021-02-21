@@ -14,7 +14,7 @@
                             </b-col>
                         </b-row>
                         <!-- Componente con los inputs para cálculos al cual le enviamos las categorias seleccionadas -->
-                        <CalculatorForm :measureUnits="selectedMeasureUnits" />
+                        <CalculatorForm :measureUnits="selectedMeasureUnits" :isChangingCategory="isChangingCategory" @isChangedValues="isChangingCategory = $event" />
                         
                     </b-form>
                 </div>
@@ -82,7 +82,8 @@ export default {
                     {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
                     {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
                     {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
-                ]
+                ],
+            isChangingCategory: true
             
         }
     },
@@ -94,6 +95,7 @@ export default {
             let values = this.measureUnits.filter(u => u.categoryId == categoryId);
             // Configuramos nuestras unidades de medida seleccionadas con dichos valores.
             this.selectedMeasureUnits = values;
+            this.isChangingCategory = true;
         }
     }
 }
