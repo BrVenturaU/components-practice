@@ -16,12 +16,6 @@
                         <!-- Componente con los inputs para cálculos al cual le enviamos las categorias seleccionadas -->
                         <CalculatorForm :measureUnits="selectedMeasureUnits" />
                         
-                        <b-row>
-                            <b-col cols="12" class="text-left">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                            </b-col>
-                        </b-row>
-                        
                     </b-form>
                 </div>
             </div>
@@ -45,48 +39,50 @@ export default {
             // Unidades de medida (cada categoryId corresponde a un id de las categorias anteriores)
             // Deben ser 5 por cada categoria, los ID de las unidades de medida no se deben repetir.
             measureUnits:[
-                // Longitud
-                {id:1, categoryId:1, name:"Metros", symbol:"m"},
-                {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:1, name:"N4"},
-                {id:5, categoryId:1, name:"N5"},
+                // Longitud - Length
+                {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
+                {id:2, categoryId:1, name:"Centimeter", symbol:"cm"}, //Centimetros
+                {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
+                {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
+                {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
 
                 // Monedas
-                {id:6, categoryId:2, name:"N6"},
-                {id:7, categoryId:2, name:"N7"},
-                {id:8, categoryId:2, name:"N8"},
-                {id:9, categoryId:2, name:"N9"},
-                {id:10, categoryId:2, name:"N10"},
+                {id:6, categoryId:2, name:"Dolar estadounidense", symbol:"USD"}, // dolar estadounidense
+                {id:7, categoryId:2, name:"Euro", symbol:"EUR"}, // euro - España
+                {id:8, categoryId:2, name:"Colon Salvadoreño", symbol:"SVC"}, // euro - España
+                {id:9, categoryId:2, name:"Libra esterlina", symbol:"GBP"}, // libra esterlina
+                {id:10, categoryId:2, name:"Dolar de Hong Kong", symbol:"HKD"}, // dolar - Hong Kong
 
-                // Masa
-                {id:11, categoryId:3, name:"N11"},
-                {id:12, categoryId:3, name:"N12"},
-                {id:13, categoryId:3, name:"N13"},
-                {id:14, categoryId:3, name:"N14"},
-                {id:15, categoryId:3, name:"N15"},
+                   // Masa
+                {id:11, categoryId:3, name:"Onza", symbol:"oz"},
+                {id:12, categoryId:3, name:"Gramo", symbol:"g"},
+                {id:13, categoryId:3, name:"Miligramo", symbol:"mg"},
+                {id:14, categoryId:3, name:"Libra", symbol:"lb"},
+                {id:15, categoryId:3, name:"Kilogramo", symbol:"kg"},
 
                 //Tiempo
+
                 {id:16, categoryId:4, name:"Milisegundo", symbol:"ms"},
                 {id:17, categoryId:4, name:"Segundo", symbol:"s"},
                 {id:18, categoryId:4, name:"Minutos", symbol:"min"},
                 {id:19, categoryId:4, name:"Hora", symbol:"h"},
                 {id:20, categoryId:4, name:"Día", symbol:"d"},
-                //Almacenamiento
-                {id:21, categoryId:5, name:"N21"},
-                {id:22, categoryId:5, name:"N22"},
-                {id:23, categoryId:5, name:"N23"},
-                {id:24, categoryId:5, name:"N24"},
-                {id:25, categoryId:5, name:"N25"}
+
+                //Almacenamiento -  Digital Storage
+                {id:21, categoryId:5, name:"Bit", symbol: "b"},
+                {id:22, categoryId:5, name:"Kilobyte", symbol: "Kb"},
+                {id:23, categoryId:5, name:"Megabyte", symbol: "Mb"},
+                {id:24, categoryId:5, name:"Gigabyte", symbol: "Gb"},
+                {id:25, categoryId:5, name:"Terabyte", symbol: "Tb"}
             ],
-            // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
-            selectedMeasureUnits:[
-                {id:1, categoryId:1, name:"Metros", symbol:"m"},
-                {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:1, name:"N4"},
-                {id:5, categoryId:1, name:"N5"}
-            ]
+             // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
+                selectedMeasureUnits:[
+                    {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
+                    {id:2, categoryId:1, name:"Centimeter", symbol:"cm"}, //Centimetros
+                    {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
+                    {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
+                    {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
+                ]
             
         }
     },
