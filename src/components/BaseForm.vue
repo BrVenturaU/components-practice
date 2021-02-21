@@ -66,13 +66,12 @@ export default {
                 {id:18, categoryId:4, name:"N18"},
                 {id:19, categoryId:4, name:"N19"},
                 {id:20, categoryId:4, name:"N20"},
-                //Almacenamiento
-                {id:21, categoryId:5, name:"N21"},
-                {id:22, categoryId:5, name:"N22"},
-                {id:23, categoryId:5, name:"N23"},
-                {id:24, categoryId:5, name:"N24"},
-                {id:25, categoryId:5, name:"N25"}
-
+                //Almacenamiento -  Digital Storage
+                {id:21, categoryId:5, name:"Bit", symbol: "b"},
+                {id:22, categoryId:5, name:"Kilobyte", symbol: "Kb"},
+                {id:23, categoryId:5, name:"Megabyte", symbol: "Mb"},
+                {id:24, categoryId:5, name:"Gigabyte", symbol: "Gb"},
+                {id:25, categoryId:5, name:"Terabyte", symbol: "Tb"}
             ],
              // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
                 selectedMeasureUnits:[
