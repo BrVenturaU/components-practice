@@ -39,12 +39,12 @@ export default {
             // Unidades de medida (cada categoryId corresponde a un id de las categorias anteriores)
             // Deben ser 5 por cada categoria, los ID de las unidades de medida no se deben repetir.
             measureUnits:[
-                // Longitud
-                {id:1, categoryId:1, name:"Metros", symbol:"m"},
-                {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:1, name:"N4"},
-                {id:5, categoryId:1, name:"N5"},
+                // Longitud - Length
+                {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
+                {id:2, categoryId:1, name:"Centimeter", symbol: "cm"}, //Centimetros
+                {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
+                {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
+                {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
 
                 // Monedas
                 {id:6, categoryId:2, name:"Dolar estadounidense", symbol:"USD"}, // dolar estadounidense
@@ -74,14 +74,14 @@ export default {
                 {id:25, categoryId:5, name:"N25"}
 
             ],
-            // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
-            selectedMeasureUnits:[
-                {id:1, categoryId:1, name:"Metros", symbol:"m"},
-                {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:1, name:"N4"},
-                {id:5, categoryId:1, name:"N5"}
-            ]
+             // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
+                selectedMeasureUnits:[
+                    {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
+                    {id:2, categoryId:1, name:"Centimeter", symbol: "cm"}, //Centimetros
+                    {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
+                    {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
+                    {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
+                ]
             
         }
     },
