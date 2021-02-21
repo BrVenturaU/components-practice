@@ -41,7 +41,7 @@ export default {
             measureUnits:[
                 // Longitud - Length
                 {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
-                {id:2, categoryId:1, name:"Centimeter", symbol: "cm"}, //Centimetros
+                {id:2, categoryId:1, name:"Centimeter", symbol:"cm"}, //Centimetros
                 {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
                 {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
                 {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
@@ -76,7 +76,7 @@ export default {
              // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
                 selectedMeasureUnits:[
                     {id:1, categoryId:1, name:"Milimeter", symbol:"mm"}, //Milimetros
-                    {id:2, categoryId:1, name:"Centimeter", symbol: "cm"}, //Centimetros
+                    {id:2, categoryId:1, name:"Centimeter", symbol:"cm"}, //Centimetros
                     {id:3, categoryId:1, name:"Inch", symbol:"in"}, //Pulgadas
                     {id:4, categoryId:1, name: "Meter", symbol:"m"}, //Metros
                     {id:5, categoryId:1, name:"Foot", symbol:"ft-us"}, //USA Feet
