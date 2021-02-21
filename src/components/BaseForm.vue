@@ -16,12 +16,6 @@
                         <!-- Componente con los inputs para cálculos al cual le enviamos las categorias seleccionadas -->
                         <CalculatorForm :measureUnits="selectedMeasureUnits" />
                         
-                        <b-row>
-                            <b-col cols="12" class="text-left">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                            </b-col>
-                        </b-row>
-                        
                     </b-form>
                 </div>
             </div>
@@ -43,28 +37,50 @@ export default {
             categories: [{id:1, name:"Longitud"}, {id:2, name:"Monedas"}, {id:3, name:"Masa"}, {id:4, name:"Tiempo"}, {id:5, name:"Almacenamiento"}],
 
             // Unidades de medida (cada categoryId corresponde a un id de las categorias anteriores)
+            // Deben ser 5 por cada categoria, los ID de las unidades de medida no se deben repetir.
             measureUnits:[
-                {id:1, categoryId:1, name:"N1"},
+                // Longitud
+                {id:1, categoryId:1, name:"Metros", symbol:"m"},
                 {id:2, categoryId:1, name:"N2"},
                 {id:3, categoryId:1, name:"N3"},
-                {id:4, categoryId:2, name:"N4"},
-                {id:5, categoryId:2, name:"N5"},
-                {id:6, categoryId:2, name:"N6"},
-                {id:7, categoryId:3, name:"N7"},
-                {id:8, categoryId:3, name:"N8"},
-                {id:9, categoryId:3, name:"N9"},
-                {id:10, categoryId:4, name:"N10"},
-                {id:11, categoryId:4, name:"N11"},
-                {id:12, categoryId:4, name:"N12"},
-                {id:13, categoryId:5, name:"N13"},
-                {id:14, categoryId:5, name:"N14"},
-                {id:15, categoryId:5, name:"N15"}
+                {id:4, categoryId:1, name:"N4"},
+                {id:5, categoryId:1, name:"N5"},
+
+                // Monedas
+                {id:6, categoryId:2, name:"Dolar estadounidense", symbol:"USD"}, // dolar estadounidense
+                {id:7, categoryId:2, name:"Euro", symbol:"EUR"}, // euro - España
+                {id:8, categoryId:2, name:"Colon Salvadoreño", symbol:"SVC"}, // euro - España
+                {id:9, categoryId:2, name:"Libra esterlina", symbol:"GBP"}, // libra esterlina
+                {id:10, categoryId:2, name:"Dolar de Hong Kong", symbol:"HKD"}, // dolar - Hong Kong
+
+                   // Masa
+                {id:11, categoryId:3, name:"Onza", symbol:"oz"},
+                {id:12, categoryId:3, name:"Gramo", symbol:"g"},
+                {id:13, categoryId:3, name:"Miligramo", symbol:"mg"},
+                {id:14, categoryId:3, name:"Libra", symbol:"lb"},
+                {id:15, categoryId:3, name:"Kilogramo", symbol:"kg"},
+
+                //Tiempo
+                {id:16, categoryId:4, name:"N16"},
+                {id:17, categoryId:4, name:"N17"},
+                {id:18, categoryId:4, name:"N18"},
+                {id:19, categoryId:4, name:"N19"},
+                {id:20, categoryId:4, name:"N20"},
+                //Almacenamiento
+                {id:21, categoryId:5, name:"N21"},
+                {id:22, categoryId:5, name:"N22"},
+                {id:23, categoryId:5, name:"N23"},
+                {id:24, categoryId:5, name:"N24"},
+                {id:25, categoryId:5, name:"N25"}
+
             ],
-            // Unidades de medida seleccionadas
+            // Unidades de medida seleccionadas (Tienen que ser las 5 primeras, es decir, las de longitud)
             selectedMeasureUnits:[
-                {id:1, categoryId:1, name:"N1"},
+                {id:1, categoryId:1, name:"Metros", symbol:"m"},
                 {id:2, categoryId:1, name:"N2"},
-                {id:3, categoryId:1, name:"N3"}
+                {id:3, categoryId:1, name:"N3"},
+                {id:4, categoryId:1, name:"N4"},
+                {id:5, categoryId:1, name:"N5"}
             ]
             
         }
